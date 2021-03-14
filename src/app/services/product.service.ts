@@ -9,13 +9,13 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  apiUrl = "https://localhost:44324/api/";
+  apiUrl = 'https://localhost:44324/api/';
 
   constructor(private httpClient:HttpClient) { }
 
   getProducts():Observable<ListResponseModel<Product>> {//bir servisten api isteği yapmak için kullanılacak.
    let newPath = this.apiUrl + "products/getall"
-   return this.httpClient.get<ListResponseModel<Product>>(this.apiUrl);
+   return this.httpClient.get<ListResponseModel<Product>>(newPath);
     //Gelen datayı bu responsemodele map edecez.
   }
 
